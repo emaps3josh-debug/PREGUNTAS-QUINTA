@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quinta Leslie Mercedes – Información de precios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --verde:#2f5d50; --verde-2:#3f7a68; --agua:#d9efe9; --crema:#faf7f1;
+    --tinta:#1f2a27; --gris:#6b7773; --borde:#e3ddd2; --acento:#e0a458;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--crema);color:var(--tinta);line-height:1.45}
+  header{background:linear-gradient(160deg,var(--verde),var(--verde-2));color:#fff;padding:36px 20px 56px;text-align:center}
+  header .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+  header h1{font-family:Fraunces,Georgia,serif;font-size:30px;margin:8px 0 6px;line-height:1.1}
+  header p{margin:0 auto;max-width:460px;opacity:.9;font-size:15px}
+  .wrap{max-width:620px;margin:-34px auto 0;padding:0 14px 120px}
+  .progreso{position:sticky;top:0;z-index:5;background:var(--crema);padding:10px 2px 8px}
+  .barra{height:6px;background:var(--borde);border-radius:99px;overflow:hidden}
+  .barra i{display:block;height:100%;width:0;background:var(--acento);transition:width .3s}
+  .progreso small{display:block;margin-top:5px;color:var(--gris);font-size:12px;text-align:right}
+  section{background:#fff;border:1px solid var(--borde);border-radius:18px;padding:18px 16px 6px;margin-bottom:16px;box-shadow:0 2px 10px rgba(30,40,35,.04)}
+  section h2{font-family:Fraunces,Georgia,serif;font-size:20px;margin:0 0 4px;display:flex;align-items:center;gap:8px}
+  section .sub{color:var(--gris);font-size:13px;margin:0 0 12px}
+  .q{padding:12px 0 16px;border-top:1px dashed var(--borde)}
+  .q:first-of-type{border-top:none}
+  .q label.t{display:block;font-weight:600;font-size:15px;margin-bottom:8px}
+  .q label.t b{color:var(--verde);margin-right:4px}
+  input[type=text],input[type=number],textarea{width:100%;font:inherit;font-size:16px;padding:11px 12px;border:1px solid var(--borde);border-radius:12px;background:#fdfcf9;color:var(--tinta)}
+  input:focus,textarea:focus{outline:2px solid var(--agua);border-color:var(--verde-2)}
+  textarea{min-height:64px;resize:vertical}
+  .pre{display:flex;align-items:center;border:1px solid var(--borde);border-radius:12px;background:#fdfcf9;overflow:hidden}
+  .pre span{padding:0 10px;color:var(--gris);font-weight:600}
+  .pre input{border:none;border-radius:0;padding-left:0;background:transparent}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+  .chips input{position:absolute;opacity:0;pointer-events:none}
+  .chips label{padding:9px 14px;border:1px solid var(--borde);border-radius:99px;font-size:14px;cursor:pointer;background:#fdfcf9;user-select:none}
+  .chips input:checked+label{background:var(--verde);border-color:var(--verde);color:#fff}
+  .extra{display:none;margin-top:6px}
+  .extra.show{display:block}
+  .hint{font-size:12px;color:var(--gris);margin-top:6px}
+  .fila{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .fila small{display:block;font-size:12px;color:var(--gris);margin-bottom:4px}
+  .acciones{position:fixed;left:0;right:0;bottom:0;background:rgba(250,247,241,.96);border-top:1px solid var(--borde);padding:12px 14px calc(12px + env(safe-area-inset-bottom));backdrop-filter:blur(6px)}
+  .acciones .in{max-width:620px;margin:0 auto}
+  button,.btn{display:block;width:100%;border:none;border-radius:14px;padding:15px;font:600 16px Inter,sans-serif;cursor:pointer;text-align:center;text-decoration:none}
+  .primario{background:var(--verde);color:#fff}
+  .wa{background:#25D366;color:#fff;margin-bottom:10px}
+  .sec{background:#fff;color:var(--verde);border:1px solid var(--verde);margin-bottom:10px}
+  .modal{position:fixed;inset:0;background:rgba(20,30,25,.55);display:none;align-items:flex-end;justify-content:center;z-index:20}
+  .modal.show{display:flex}
+  .hoja{background:#fff;width:100%;max-width:620px;border-radius:22px 22px 0 0;padding:22px 16px calc(18px + env(safe-area-inset-bottom));max-height:88vh;overflow:auto}
+  .hoja h3{font-family:Fraunces,Georgia,serif;margin:0 0 6px;font-size:22px}
+  .hoja p{margin:0 0 14px;color:var(--gris);font-size:14px}
+  pre{white-space:pre-wrap;background:var(--crema);border:1px solid var(--borde);border-radius:12px;padding:12px;font:13px/1.5 Inter,sans-serif;max-height:36vh;overflow:auto}
+  .cerrar{background:none;color:var(--gris);padding:10px}
+  .aviso{font-size:13px;color:var(--verde);text-align:center;min-height:18px;margin:6px 0}
+  footer{text-align:center;color:var(--gris);font-size:12px;margin-top:10px}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">Xochitepec, Morelos</div>
+  <h1>Quinta Leslie Mercedes</h1>
+  <p>Ayúdenos con esta información para armar la tabla de precios y poder cotizar al momento. Toma unos 5 minutos 🙏</p>
+</header>
+
+<div class="wrap">
+  <div class="progreso"><div class="barra"><i id="barra"></i></div><small id="cuenta">0 de 17 respondidas</small></div>
+
+  <form id="f" autocomplete="off">
+
+  <section>
+    <h2>🏡 Hospedaje</h2>
+    <p class="sub">Renta para quedarse a dormir</p>
+
+    <div class="q" data-n="1">
+      <label class="t" for="q1"><b>1.</b> Los $13,000 de viernes a domingo, ¿para cuántas personas máximo son?</label>
+      <input type="number" inputmode="numeric" id="q1" name="q1" placeholder="Ej. 23 personas">
+    </div>
+
+    <div class="q" data-n="2">
+      <label class="t" for="q2"><b>2.</b> ¿Cuánto se cobra por persona extra?</label>
+      <div class="pre"><span>$</span><input type="number" inputmode="numeric" id="q2" name="q2" placeholder="Ej. 300"></div>
+      <div class="hint">Si no se cobra, escriba 0.</div>
+    </div>
+
+    <div class="q" data-n="3">
+      <label class="t"><b>3.</b> ¿A qué hora entran el viernes y salen el domingo?</label>
+      <div class="fila">
+        <div><small>Entrada viernes</small><input type="text" name="q3a" placeholder="Ej. 2 pm"></div>
+        <div><small>Salida domingo</small><input type="text" name="q3b" placeholder="Ej. 6 pm"></div>
+      </div>
+    </div>
+
+    <div class="q" data-n="4">
+      <label class="t"><b>4.</b> ¿Se renta por 1 noche (sábado a domingo)? ¿Cuánto?</label>
+      <div class="chips" data-toggle="q4x">
+        <input type="radio" name="q4" id="q4s" value="Sí"><label for="q4s">Sí</label>
+        <input type="radio" name="q4" id="q4n" value="No"><label for="q4n">No</label>
+      </div>
+      <div class="extra" id="q4x"><div class="pre"><span>$</span><input type="number" inputmode="numeric" name="q4p" placeholder="Precio por 1 noche"></div></div>
+    </div>
+
+    <div class="q" data-n="5">
+      <label class="t"><b>5.</b> ¿Entre semana el precio baja?</label>
+      <div class="chips" data-toggle="q5x">
+        <input type="radio" name="q5" id="q5s" value="Sí"><label for="q5s">Sí</label>
+        <input type="radio" name="q5" id="q5n" value="No"><label for="q5n">No</label>
+      </div>
+      <div class="extra" id="q5x"><input type="text" name="q5d" placeholder="Comentario (opcional)"></div>
+    </div>
+
+    <div class="q" data-n="6">
+      <label class="t"><b>6.</b> ¿En puentes, Semana Santa y diciembre sube?</label>
+      <div class="chips" data-toggle="q6x">
+        <input type="radio" name="q6" id="q6s" value="Sí"><label for="q6s">Sí</label>
+        <input type="radio" name="q6" id="q6n" value="No"><label for="q6n">No</label>
+      </div>
+      <div class="extra" id="q6x"><input type="text" name="q6d" placeholder="Comentario (opcional)"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🎉 Eventos de un día</h2>
+    <p class="sub">Fiestas y reuniones sin quedarse a dormir</p>
+
+    <div class="q" data-n="7">
+      <label class="t"><b>7.</b> ¿Cuál sería el horario del evento?</label>
+      <div class="fila">
+        <div><small>Desde</small><input type="text" name="q7a" placeholder="Ej. 10 am"></div>
+        <div><small>Hasta</small><input type="text" name="q7b" placeholder="Ej. 10 pm"></div>
+      </div>
+    </div>
+
+    <div class="q" data-n="8">
+      <label class="t" for="q8"><b>8.</b> ¿Hasta qué hora se permite música?</label>
+      <input type="text" id="q8" name="q8" placeholder="Ej. 11 pm">
+    </div>
+
+    <div class="q" data-n="9">
+      <label class="t"><b>9.</b> ¿Qué proveedores maneja?</label>
+      <div class="chips multi">
+        <input type="checkbox" name="q9" id="q9a" value="Banquete"><label for="q9a">Banquete</label>
+        <input type="checkbox" name="q9" id="q9b" value="Mobiliario"><label for="q9b">Mobiliario</label>
+        <input type="checkbox" name="q9" id="q9c" value="Carpa"><label for="q9c">Carpa</label>
+        <input type="checkbox" name="q9" id="q9d" value="Sonido"><label for="q9d">Sonido</label>
+        <input type="checkbox" name="q9" id="q9e" value="Meseros"><label for="q9e">Meseros</label>
+        <input type="checkbox" name="q9" id="q9f" value="Decoración"><label for="q9f">Decoración</label>
+      </div>
+      <input type="text" name="q9o" placeholder="Otros (opcional)">
+    </div>
+
+    <div class="q" data-n="10">
+      <label class="t"><b>10.</b> Si el cliente trae sus proveedores, ¿se le cobra algo extra?</label>
+      <div class="chips" data-toggle="q10x">
+        <input type="radio" name="q10" id="q10s" value="Sí"><label for="q10s">Sí</label>
+        <input type="radio" name="q10" id="q10n" value="No"><label for="q10n">No</label>
+      </div>
+      <div class="extra" id="q10x"><input type="text" name="q10d" placeholder="¿Cuánto o de qué depende?"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🪑 Mobiliario</h2>
+    <p class="sub">Sobre el proveedor de mesas</p>
+
+    <div class="q" data-n="11">
+      <label class="t" for="q11"><b>11.</b> ¿Cuánto cobra su proveedor por mesa con 10 sillas y sombrilla?</label>
+      <div class="pre"><span>$</span><input type="number" inputmode="numeric" id="q11" name="q11" placeholder="Precio por mesa completa"></div>
+    </div>
+
+    <div class="q" data-n="12">
+      <label class="t"><b>12.</b> ¿Se cobra la mesa completa o por separado (mesa, sillas, sombrilla, mantel)?</label>
+      <div class="chips" data-toggle="q12x" data-show="Por separado">
+        <input type="radio" name="q12" id="q12a" value="Completa"><label for="q12a">Completa</label>
+        <input type="radio" name="q12" id="q12b" value="Por separado"><label for="q12b">Por separado</label>
+      </div>
+      <div class="extra" id="q12x"><textarea name="q12d" placeholder="Ej. mesa $50, silla $10, sombrilla $80, mantel $30"></textarea></div>
+    </div>
+
+    <div class="q" data-n="13">
+      <label class="t"><b>13.</b> ¿El precio incluye llevarlas, acomodarlas y recogerlas?</label>
+      <div class="chips" data-toggle="q13x" data-show="No">
+        <input type="radio" name="q13" id="q13s" value="Sí"><label for="q13s">Sí</label>
+        <input type="radio" name="q13" id="q13n" value="No"><label for="q13n">No</label>
+      </div>
+      <div class="extra" id="q13x"><input type="text" name="q13d" placeholder="¿Cuánto cobra el flete?"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>💵 Pagos</h2>
+    <p class="sub">Anticipo, liquidación y depósito</p>
+
+    <div class="q" data-n="14">
+      <label class="t"><b>14.</b> Los $2,000 de anticipo, ¿aplican igual para eventos grandes (ej. 300 personas)?</label>
+      <div class="chips" data-toggle="q14x" data-show="No">
+        <input type="radio" name="q14" id="q14s" value="Sí"><label for="q14s">Sí</label>
+        <input type="radio" name="q14" id="q14n" value="No"><label for="q14n">No</label>
+      </div>
+      <div class="extra" id="q14x"><input type="text" name="q14d" placeholder="¿Cuánto sería para eventos grandes?"></div>
+    </div>
+
+    <div class="q" data-n="15">
+      <label class="t"><b>15.</b> ¿Cuándo se liquida el resto?</label>
+      <div class="chips">
+        <input type="radio" name="q15" id="q15a" value="Días antes"><label for="q15a">Días antes</label>
+        <input type="radio" name="q15" id="q15b" value="Al llegar"><label for="q15b">Al llegar</label>
+        <input type="radio" name="q15" id="q15c" value="Otro"><label for="q15c">Otro</label>
+      </div>
+      <input type="text" name="q15d" placeholder="Detalle (ej. 8 días antes)">
+    </div>
+
+    <div class="q" data-n="16">
+      <label class="t"><b>16.</b> ¿Se cobra depósito por daños? ¿De cuánto y cuándo se regresa?</label>
+      <div class="chips" data-toggle="q16x">
+        <input type="radio" name="q16" id="q16s" value="Sí"><label for="q16s">Sí</label>
+        <input type="radio" name="q16" id="q16n" value="No"><label for="q16n">No</label>
+      </div>
+      <div class="extra" id="q16x">
+        <div class="fila">
+          <div><small>Monto</small><div class="pre"><span>$</span><input type="number" inputmode="numeric" name="q16m" placeholder="Ej. 2000"></div></div>
+          <div><small>Se regresa</small><input type="text" name="q16r" placeholder="Ej. al salir"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="q" data-n="17">
+      <label class="t" for="q17"><b>17.</b> ¿Cuál es el precio más bajo que aceptaría si alguien regatea?</label>
+      <textarea id="q17" name="q17" placeholder="Ej. fin de semana mínimo $12,000; evento de 50 personas mínimo..."></textarea>
+    </div>
+  </section>
+
+  <section>
+    <h2>📝 Comentarios</h2>
+    <div class="q">
+      <label class="t" for="com">¿Algo más que deba saber?</label>
+      <textarea id="com" name="com" placeholder="Opcional"></textarea>
+    </div>
+  </section>
+
+  <footer>Quinta Leslie Mercedes · Xochitepec, Morelos</footer>
+  </form>
+</div>
+
+<div class="acciones"><div class="in"><button class="primario" id="enviar" type="button">Revisar y enviar respuestas</button></div></div>
+
+<div class="modal" id="modal">
+  <div class="hoja">
+    <h3>¡Gracias! 🙌</h3>
+    <p>Toque el botón verde para mandar sus respuestas por WhatsApp.</p>
+    <a class="btn wa" id="wa" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+    <button class="sec" id="copiar" type="button">Copiar respuestas</button>
+    <div class="aviso" id="aviso"></div>
+    <pre id="resumen"></pre>
+    <p class="hint">Si WhatsApp no se abre, copie las respuestas y mándelas al 777 106 1651.</p>
+    <button class="cerrar" id="cerrar" type="button">Volver a editar</button>
+  </div>
+</div>
+
+<script>
+const WHATSAPP = "527771061651";
+const f = document.getElementById('f');
+const KEY = 'quinta-leslie-respuestas';
+
+function val(n){ const el=f.elements[n]; if(!el) return ''; if(el instanceof RadioNodeList){ return el.value||''; } return (el.value||'').trim(); }
+function checks(n){ return [...f.querySelectorAll('input[name="'+n+'"]:checked')].map(x=>x.value); }
+function money(v){ return v? '$'+Number(v).toLocaleString('es-MX') : ''; }
+
+// Mostrar campos extra según respuesta
+f.querySelectorAll('.chips[data-toggle]').forEach(g=>{
+  const target=document.getElementById(g.dataset.toggle);
+  const show=g.dataset.show||'Sí';
+  const upd=()=>{ const c=g.querySelector('input:checked'); target.classList.toggle('show', !!c && c.value===show); };
+  g.addEventListener('change',upd); g._upd=upd;
+});
+
+function respondida(q){
+  return [...q.querySelectorAll('input,textarea')].some(el=>{
+    if(el.type==='radio'||el.type==='checkbox') return el.checked;
+    return el.value.trim()!=='';
+  });
+}
+function progreso(){
+  const qs=[...f.querySelectorAll('.q[data-n]')];
+  const n=qs.filter(respondida).length;
+  document.getElementById('barra').style.width=(n/qs.length*100)+'%';
+  document.getElementById('cuenta').textContent=n+' de '+qs.length+' respondidas';
+}
+
+function guardar(){
+  try{
+    const d={};
+    [...f.elements].forEach(el=>{ if(!el.name) return; if(el.type==='radio'||el.type==='checkbox'){ if(el.checked) d[el.id]=true; } else d[el.name]=el.value; });
+    localStorage.setItem(KEY, JSON.stringify(d));
+  }catch(e){}
+}
+function cargar(){
+  try{
+    const d=JSON.parse(localStorage.getItem(KEY)||'{}');
+    [...f.elements].forEach(el=>{ if(!el.name) return; if(el.type==='radio'||el.type==='checkbox'){ if(d[el.id]) el.checked=true; } else if(d[el.name]!=null) el.value=d[el.name]; });
+  }catch(e){}
+  f.querySelectorAll('.chips[data-toggle]').forEach(g=>g._upd());
+}
+
+f.addEventListener('input',()=>{progreso();guardar();});
+f.addEventListener('change',()=>{progreso();guardar();});
+f.addEventListener('submit',e=>e.preventDefault());
+
+function linea(n, txt){ return n+'. '+(txt||'—'); }
+function sino(r, extra){ if(!r) return ''; return extra? r+' – '+extra : r; }
+
+function armar(){
+  const p=[];
+  p.push('*QUINTA LESLIE – RESPUESTAS DE PRECIOS*','');
+  p.push('🏡 *Hospedaje*');
+  p.push(linea(1, val('q1')? val('q1')+' personas máximo' : ''));
+  p.push(linea(2, val('q2')!==''? money(val('q2'))+' por persona extra' : ''));
+  const e3=val('q3a'), s3=val('q3b');
+  p.push(linea(3, (e3||s3)? 'Entrada viernes: '+(e3||'—')+' / Salida domingo: '+(s3||'—') : ''));
+  p.push(linea(4, val('q4')==='Sí'? 'Sí'+(val('q4p')?' – '+money(val('q4p')):'') : val('q4')));
+  p.push(linea(5, sino(val('q5'), val('q5')==='Sí'?val('q5d'):'')));
+  p.push(linea(6, sino(val('q6'), val('q6')==='Sí'?val('q6d'):'')));
+  p.push('','🎉 *Eventos de un día*');
+  const a7=val('q7a'), b7=val('q7b');
+  p.push(linea(7, (a7||b7)? (a7||'—')+' a '+(b7||'—') : ''));
+  p.push(linea(8, val('q8')));
+  const prov=checks('q9'); if(val('q9o')) prov.push(val('q9o'));
+  p.push(linea(9, prov.join(', ')));
+  p.push(linea(10, sino(val('q10'), val('q10')==='Sí'?val('q10d'):'')));
+  p.push('','🪑 *Mobiliario*');
+  p.push(linea(11, val('q11')? money(val('q11'))+' por mesa con 10 sillas y sombrilla' : ''));
+  p.push(linea(12, sino(val('q12'), val('q12')==='Por separado'?val('q12d'):'')));
+  p.push(linea(13, sino(val('q13'), val('q13')==='No'?val('q13d'):'')));
+  p.push('','💵 *Pagos*');
+  p.push(linea(14, sino(val('q14'), val('q14')==='No'?val('q14d'):'')));
+  p.push(linea(15, [val('q15'), val('q15d')].filter(Boolean).join(' – ')));
+  let d16=val('q16');
+  if(d16==='Sí'){ const m=val('q16m'), r=val('q16r'); d16='Sí'+(m?' – '+money(m):'')+(r?' – se regresa: '+r:''); }
+  p.push(linea(16, d16));
+  p.push(linea(17, val('q17')));
+  if(val('com')){ p.push('','📝 *Comentarios*', val('com')); }
+  return p.join('\n');
+}
+
+const modal=document.getElementById('modal');
+document.getElementById('enviar').addEventListener('click',()=>{
+  const t=armar();
+  document.getElementById('resumen').textContent=t;
+  document.getElementById('wa').href='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(t);
+  document.getElementById('aviso').textContent='';
+  modal.classList.add('show');
+});
+document.getElementById('cerrar').addEventListener('click',()=>modal.classList.remove('show'));
+modal.addEventListener('click',e=>{ if(e.target===modal) modal.classList.remove('show'); });
+document.getElementById('copiar').addEventListener('click',async()=>{
+  const av=document.getElementById('aviso');
+  try{ await navigator.clipboard.writeText(armar()); av.textContent='✅ Respuestas copiadas'; }
+  catch(e){
+    const r=document.createRange(); r.selectNodeContents(document.getElementById('resumen'));
+    const s=getSelection(); s.removeAllRanges(); s.addRange(r);
+    av.textContent='Texto seleccionado: manténgalo presionado y elija Copiar';
+  }
+});
+
+cargar(); progreso();
+</script>
+</body>
+</html>
